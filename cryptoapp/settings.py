@@ -30,6 +30,9 @@ DEBUG_CHOICES = [True, False]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG_CHOICES[int(os.environ.get("DEBUG_STATUS"))]
 
+if DEBUG:
+    ALLOWED_HOSTS = ['*', ]
+
 ALLOWED_HOSTS = []
 
 

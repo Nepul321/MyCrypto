@@ -16,6 +16,10 @@ class CryptocurrencySerializer(serializers.ModelSerializer):
 class PortFolioSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     assets = CryptocurrencySerializer(read_only=True, many=True)
+    price_bought_for = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Portfolio
-        fields = ('id', 'user', 'assets')
+        fields = ('id', 'user', 'assets', 'price_bought_for')
+
+    def get_price_bought_for(self, obj):
+        return obj.total_price

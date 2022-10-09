@@ -6,8 +6,18 @@ MyCrypto - Home
 
 {% block content %}
 <div class="container my-5">
-    <h1>Crypto</h1>
+    <h1>Your Crypto Portfolio</h1>
     <hr />
+    {% for asset in obj.assets.all %}
+     <div class="border mb-3 py-3 px-2">
+        <p style="font-size: 20px;">{{ asset.name }}</p>
+        <p>Amount Bought : ${{ asset.price }}</p>
+     </div>
+    {% endfor %}
+    <div class="border my-5 py-3 px-2">
+        <p style="font-size: 25px;">Price All Assets were bought for : ${{ obj.total_price }}</p>
+        <p style="font-size: 25px;">Current Portfolio Value : </p>
+    </div>
 </div>
 {% endblock content %}
 

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load humanize %}
+
 {% block title %}
 MyCrypto - Home
 {% endblock title %}
@@ -11,11 +13,11 @@ MyCrypto - Home
     {% for asset in obj.assets.all %}
      <div class="border mb-3 py-3 px-2">
         <p style="font-size: 20px;">{{ asset.name }}</p>
-        <p>Amount Bought : ${{ asset.price }}</p>
+        <p>Amount Bought : ${{ asset.price|intcomma }}</p>
      </div>
     {% endfor %}
     <div class="border my-5 py-3 px-2">
-        <p style="font-size: 25px;">Price All Assets were bought for : ${{ obj.total_price }}</p>
+        <p style="font-size: 25px;">Price All Assets were bought for : ${{ obj.total_price|intcomma }}</p>
         <p style="font-size: 25px;">Current Portfolio Value : </p>
     </div>
 </div>

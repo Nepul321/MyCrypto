@@ -1,4 +1,17 @@
-const cryptosinportfolio = ['Bitcoin', 'Ethereum']
+let cryptosinportfolio = []
+
+function getPortfolioData() {
+  let id = document.getElementById("main").dataset.id
+  fetch(`/api/portfolios/${id}/`)
+
+  .then((res) => {
+    return res.json();
+  })
+
+  .then((data) => {
+    setPortfolioData(data);
+  })
+}
 
 function getCryptos() {
     fetch('https://api.coinlore.net/api/tickers/')
@@ -18,4 +31,12 @@ function useData(data) {
   console.log(items)
 }
 
+function setPortfolioData(data) {
+  let assets = data.assets
+  assets.forEach((asset) => {
+     cryptosinportfolio.push(asset.name)
+  })
+}
+
 getCryptos();
+getPortfolioData();

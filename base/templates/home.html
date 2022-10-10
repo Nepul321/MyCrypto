@@ -9,7 +9,7 @@ MyCrypto - Home
 {% endblock title %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container my-5" data-id="{{ user.id }}" id="main">
     <h1>Your Crypto Portfolio</h1>
     <hr />
     {% for asset in obj.assets.all %}

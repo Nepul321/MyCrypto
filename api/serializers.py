@@ -11,7 +11,7 @@ class CryptocurrencySerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     class Meta:
         model = Cryptocurrency
-        fields = ('id', 'user', 'name', 'price')
+        fields = ('id', 'user', 'name', 'amount', 'price')
 
 class PortFolioSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)

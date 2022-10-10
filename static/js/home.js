@@ -1,4 +1,5 @@
 let cryptosinportfolio = []
+let cryptoobjects = []
 
 function getPortfolioData() {
   let id = document.getElementById("main").dataset.id
@@ -28,13 +29,18 @@ function getCryptos() {
 
 function useData(data) {
   const items = data.filter(item => cryptosinportfolio.includes(item.name))
-  console.log(items)
+  items.forEach((item) => {
+    const getfromportfolio = cryptoobjects.filter(obj => obj.name === item.name)[0]
+    let current_value = item.price_usd * getfromportfolio.amount
+    console.log(current_value)
+  })
 }
 
 function setPortfolioData(data) {
   let assets = data.assets
   assets.forEach((asset) => {
      cryptosinportfolio.push(asset.name)
+     cryptoobjects.push(asset);
   })
 }
 

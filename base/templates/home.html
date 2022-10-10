@@ -15,7 +15,9 @@ MyCrypto - Home
     {% for asset in obj.assets.all %}
      <div class="border mb-3 py-3 px-2">
         <p style="font-size: 20px;">{{ asset.name }}</p>
-        <p>Amount Bought : ${{ asset.price|intcomma }}</p>
+        <p>Amount Bought : {{ asset.amount|intcomma }}</p>
+        <p>Price Bought for : ${{ asset.price|intcomma }}</p>
+        <p>Current Value : </p>
      </div>
     {% endfor %}
     <div class="border my-5 py-3 px-2">

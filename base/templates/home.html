@@ -12,6 +12,7 @@ MyCrypto - Home
 <div class="container my-5" data-id="{{ user.id }}" id="main">
     <h1>Your Crypto Portfolio</h1>
     <hr />
+    <canvas id="myChart" width="400" height="400"></canvas>
     {% for asset in obj.assets.all %}
      <div class="border mb-3 py-3 px-2">
         <p style="font-size: 20px;">{{ asset.name }}</p>

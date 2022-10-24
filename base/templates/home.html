@@ -17,12 +17,12 @@ MyCrypto - Home
         <p style="font-size: 20px;">{{ asset.name }}</p>
         <p>Amount Bought : {{ asset.amount|intcomma }}</p>
         <p>Price Bought for : ${{ asset.price|intcomma }}</p>
-        <p>Current Value : </p>
+        <p id="{{ asset.name }}"></p>
      </div>
     {% endfor %}
     <div class="border my-5 py-3 px-2">
         <p style="font-size: 25px;">Price All Assets were bought for : ${{ obj.total_price|intcomma }}</p>
-        <p style="font-size: 25px;">Current Portfolio Value : </p>
+        <p style="font-size: 25px;" id="current-portfolio-value"></p>
     </div>
 </div>
 {% endblock content %}

@@ -1,5 +1,6 @@
 const cryptosinportfolio = []
 const cryptoobjects = []
+const refresh_btn = document.getElementById("refresh");
 
 function getPortfolioData() {
   let id = document.getElementById("main").dataset.id
@@ -49,5 +50,13 @@ function setPortfolioData(data) {
   })
 }
 
-getCryptos();
-getPortfolioData();
+function runFunctions() {
+  getCryptos();
+  getPortfolioData();
+}
+
+refresh_btn.addEventListener('click', () => {
+  runFunctions();
+})
+
+runFunctions();

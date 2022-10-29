@@ -18,6 +18,11 @@ MyCrypto - Home
         <p>Amount Bought : {{ asset.amount|intcomma }}</p>
         <p>Price Bought for : ${{ asset.price|intcomma }}</p>
         <p id="{{ asset.name }}"></p>
+        <p id="current-price-{{ asset.name }}"></p>
+        <p id="rank-{{ asset.name }}"></p>
+        <p id="1hr-{{ asset.name }}"></p>
+        <p id="24hr-{{ asset.name }}"></p>
+        <p id="7d-{{ asset.name }}"></p>
      </div>
     {% endfor %}
     <div class="border my-5 py-3 px-2">

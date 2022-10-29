@@ -37,6 +37,16 @@ function useData(data) {
     total += current_value
     let current_value_formatted = numeral(current_value).format('0,0.00')  
     document.getElementById(`${item.name}`).innerHTML = `Current Value : $${current_value_formatted}`
+    let current_price = item.price_usd
+    let twenty4hr = item.percent_change_1h
+    let onehr = item.percent_change_7d
+    let sevend = item.percent_change_24h
+    let rank = item.rank
+    document.getElementById(`current-price-${item.name}`).innerHTML = `Current Price : $${numeral(current_price).format('0,0.00')}`
+    document.getElementById(`rank-${item.name}`).innerHTML = `Rank : ${rank}`
+    document.getElementById(`1hr-${item.name}`).innerHTML = `1h% : ${onehr}%`
+    document.getElementById(`24hr-${item.name}`).innerHTML = `24h% : ${twenty4hr}%`
+    document.getElementById(`7d-${item.name}`).innerHTML = `7d% : ${sevend}%`
     let total_formatted = numeral(total).format('0,0.00')
     document.getElementById(`current-portfolio-value`).innerHTML = `Current Portfolio Value : $${total_formatted}`
   })
